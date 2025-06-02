@@ -11,29 +11,19 @@ MQTT_TOPIC1 = "sensor/qwedd"      # Топик для второй кнопки,
 MQTT_TOPIC3 = "sensor/start_butt"
 
 # --- Настройки InfluxDB для первой кнопки ---
-INFLUXDB_URL1 = "http://influxdb:8086"
-INFLUXDB_TOKEN1 = "" # Заменить на свой
-INFLUXDB_ORG1 = "myorg"
+INFLUXDB_URL = "http://influxdb:8086"
+INFLUXDB_TOKEN = "" # Заменить на свой
+INFLUXDB_ORG = "myorg"
 INFLUXDB_BUCKET1 = "try5"  # Бакет для первой кнопки
 
 # --- Настройки InfluxDB для второй кнопки ---
-INFLUXDB_URL2 = "http://influxdb:8086"
-INFLUXDB_TOKEN2 = "" # Заменить на свой
-INFLUXDB_ORG2 = "myorg"
 INFLUXDB_BUCKET2 = "try6"  # Бакет для второй кнопки
-
+# --- Настройки InfluxDB для третьей кнопки ---
 INFLUXDB_BUCKET3 = "try7"  # Бакет для второй кнопки
 
 # Инициализация клиентов InfluxDB
-influx_client1 = InfluxDBClient(url=INFLUXDB_URL1, token=INFLUXDB_TOKEN1, org=INFLUXDB_ORG1)
-write_api1 = influx_client1.write_api(write_options=SYNCHRONOUS)
-
-influx_client2 = InfluxDBClient(url=INFLUXDB_URL2, token=INFLUXDB_TOKEN2, org=INFLUXDB_ORG2)
-write_api2 = influx_client2.write_api(write_options=SYNCHRONOUS)
-
-influx_client3 = InfluxDBClient(url=INFLUXDB_URL2, token=INFLUXDB_TOKEN2, org=INFLUXDB_ORG2)
-write_api3 = influx_client2.write_api(write_options=SYNCHRONOUS)
-
+influx_client1, influx_client2,  influx_client3 = InfluxDBClient(url=INFLUXDB_URL, token=INFLUXDB_TOKEN1, org=INFLUXDB_ORG1)
+write_api1, write_api2, write_api3 = influx_client1.write_api(write_options=SYNCHRONOUS)
 
 
 # Получаем объект для работы с API удаления
