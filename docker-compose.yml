@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  influxdb:
+    image: influxdb:2.7
+    container_name: influxdb
+    ports:
+      - "8086:8086" 
+    environment:
+      INFLUXDB_ADMIN_USER: admin
+      INFLUXDB_ADMIN_PASSWORD: admin123
+      INFLUXDB_BUCKET: mybucket
+      INFLUXDB_ORG: myorg
+      INFLUXDB_TOKEN: mytoken
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000" 
+    depends_on:
+      - influxdb  
+  app:
+    build: .
+    ports:
+      - "5000:5000" 
+    depends_on:
+      - influxdb
+    environment:
+      - INFLUXDB_URL=http://influxdb:8086
+
+
+volumes:
+  influxdb-data:

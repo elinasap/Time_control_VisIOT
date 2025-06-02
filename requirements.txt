@@ -1,0 +1,5 @@
+paho-mqtt
+datetime
+influxdb-client
+flask
+plotly
