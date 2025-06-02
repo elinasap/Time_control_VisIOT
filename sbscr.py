@@ -6,19 +6,19 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 # --- Настройки MQTT ---
 MQTT_BROKER = "broker.emqx.io"
 MQTT_PORT = 1883
-MQTT_TOPIC2 = "sensor/w_button"  # Топик для первой кнопки
-MQTT_TOPIC1 = "sensor/qwedd"      # Топик для второй кнопки
+MQTT_TOPIC2 = "sensor/w_button"  # Топик для первой кнопки, можно заменить на свой
+MQTT_TOPIC1 = "sensor/qwedd"      # Топик для второй кнопки, можно заменить на свой
 MQTT_TOPIC3 = "sensor/start_butt"
 
 # --- Настройки InfluxDB для первой кнопки ---
-INFLUXDB_URL1 = "http://localhost:8086"
-INFLUXDB_TOKEN1 = "LFTefMVg8dhz22I2V2sUtjnX9i_1WcqdKM9Bjumc8fcmf1gxLJ2B6sSzSD3TbxqnXSTYfHSEV0GBAswkoyDXjw=="
+INFLUXDB_URL1 = "http://influxdb:8086"
+INFLUXDB_TOKEN1 = "" # Заменить на свой
 INFLUXDB_ORG1 = "myorg"
 INFLUXDB_BUCKET1 = "try5"  # Бакет для первой кнопки
 
 # --- Настройки InfluxDB для второй кнопки ---
-INFLUXDB_URL2 = "http://localhost:8086"
-INFLUXDB_TOKEN2 = "LFTefMVg8dhz22I2V2sUtjnX9i_1WcqdKM9Bjumc8fcmf1gxLJ2B6sSzSD3TbxqnXSTYfHSEV0GBAswkoyDXjw=="
+INFLUXDB_URL2 = "http://influxdb:8086"
+INFLUXDB_TOKEN2 = "" # Заменить на свой
 INFLUXDB_ORG2 = "myorg"
 INFLUXDB_BUCKET2 = "try6"  # Бакет для второй кнопки
 
