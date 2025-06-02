@@ -5,8 +5,8 @@ import plotly.graph_objs as go
 
 app = Flask(__name__)
 
-INFLUXDB_URL = "http://localhost:8086"
-INFLUXDB_TOKEN = "LFTefMVg8dhz22I2V2sUtjnX9i_1WcqdKM9Bjumc8fcmf1gxLJ2B6sSzSD3TbxqnXSTYfHSEV0GBAswkoyDXjw=="
+INFLUXDB_URL = "http://influxdb:8086"
+INFLUXDB_TOKEN = "" # Заменить на свой
 INFLUXDB_ORG = "myorg"
 
 BUCKET1 = "try5"
